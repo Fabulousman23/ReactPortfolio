@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 # MyPortfolio
 
@@ -16,13 +17,13 @@ Youtube - https://www.youtube.com/watch?v=8cmJ2kR4SpM
 
 Blog - https://blog.chetanverma.com/how-to-build-a-portfolio-website-using-nextjs-and-tailwindcss
 
+=======
+>>>>>>> 8b8e79a (edit)
 ### Features -
 
 - Modern Stack (Next.js + TailwindCSS)
 - Minimal Design
 - Easy To Browse
-- Easy To Customize your details With GUI
-- Blog Crud (Create, Read, Update, Delete blog with easy to use UI).
 - Dark Mode
 
 ### Sections
@@ -32,8 +33,8 @@ Blog - https://blog.chetanverma.com/how-to-build-a-portfolio-website-using-nextj
 - Services
 - About
 - Contact
-- Markdown Blog
 
+<<<<<<< HEAD
 ### How To Use
 
 - Clone this repo
@@ -56,10 +57,13 @@ Quickes way to deploy this repo -
 
 I would be very happy to review your PRs and all the awesome things that you can improve on this portfolio.
 
+=======
+>>>>>>> 8b8e79a (edit)
 ### Tech Stack Used -
 
 - Next.js
 - TailwindCSS
+<<<<<<< HEAD
 
 ### Thanks
 
@@ -76,3 +80,5 @@ Many hours of hard work have gone into this project. Your support will be very a
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/chetanverma)
 
 > > > > > > > 011e712 (edit files)
+=======
+>>>>>>> 8b8e79a (edit)
