@@ -4,6 +4,4 @@ const nextConfig = {
   // other configurations
 };
 
-const example = `This is an improperly closed template literal`;
-
 module.exports = nextConfig;
