@@ -124,7 +124,49 @@
 </body>
 
 </html>
-```
+{
+"name": "your-app-name",
+"version": "1.0.0",
+"description": "Your app description",
+"main": "index.js",
+"scripts": {
+"start": "node index.js",
+"dev": "nodemon index.js"
+},
+"engines": {
+"node": "22.x",
+"npm": ">=6.0.0"
+},
+"dependencies": {
+"express": "^4.17.1",
+"cors": "^2.8.5"
+},
+"devDependencies": {
+"nodemon": "^2.0.7"
+}
+}
+
+const express = require("express");
+const cors = require("cors");
+const app = express();
+
+// Use the CORS middleware to allow requests from your frontend domain
+app.use(cors({ origin: "https://fabulousman23.github.io" }));
+
+// Your existing routes and middleware
+app.post("/login", (req, res) => {
+// Your login logic
+});
+
+app.post("/users", (req, res) => {
+// Your users logic
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+console.log(`Server is running on port ${PORT}`);
+});
+`````
 import React, { forwardRef } from 'react';
 
 const MyButton = forwardRef((props, ref) => (
