@@ -17,6 +17,7 @@ const BlogEditor = ({ post, close, refresh }) => {
     preview: post.preview,
     image: post.image,
   });
+  const [startDate, setStartDate] = useState(new Date());
 
   const savePost = async () => {
     if (process.env.NODE_ENV === "development") {
@@ -30,7 +31,7 @@ const BlogEditor = ({ post, close, refresh }) => {
           content: blogContent,
           variables: blogVariables,
         }),
-      }).then((data) => {
+      }).then(data => {
         if (data.status === 200) {
           close();
           refresh();
@@ -82,7 +83,7 @@ const BlogEditor = ({ post, close, refresh }) => {
               <DatePicker
                 selected={new Date(blogVariables.date)}
                 className="w-full mt-2 p-4 hover:border-blue-400 rounded-md shadow-lg border-2"
-                onChange={(date) => {
+                onChange={date => {
                   setBlogVariables({
                     ...blogVariables,
                     date: date.toISOString(),
@@ -94,7 +95,7 @@ const BlogEditor = ({ post, close, refresh }) => {
               <label className="w-full text-sx opacity-50">Title</label>
               <input
                 value={blogVariables.title}
-                onChange={(e) =>
+                onChange={e =>
                   setBlogVariables({ ...blogVariables, title: e.target.value })
                 }
                 className="w-full mt-2 p-4 hover:border-blue-400 rounded-md shadow-lg border-2"
@@ -106,7 +107,7 @@ const BlogEditor = ({ post, close, refresh }) => {
               <label className="w-full text-sx opacity-50">Tagline</label>
               <input
                 value={blogVariables.tagline}
-                onChange={(e) =>
+                onChange={e =>
                   setBlogVariables({
                     ...blogVariables,
                     tagline: e.target.value,
@@ -120,7 +121,7 @@ const BlogEditor = ({ post, close, refresh }) => {
               <label className="w-full text-sx opacity-50">preview (SEO)</label>
               <textarea
                 value={blogVariables.preview}
-                onChange={(e) =>
+                onChange={e =>
                   setBlogVariables({
                     ...blogVariables,
                     preview: e.target.value,
@@ -134,7 +135,7 @@ const BlogEditor = ({ post, close, refresh }) => {
               <label className="w-full text-sx opacity-50">Image</label>
               <input
                 value={blogVariables.image}
-                onChange={(e) =>
+                onChange={e =>
                   setBlogVariables({
                     ...blogVariables,
                     image: e.target.value,
@@ -154,7 +155,7 @@ const BlogEditor = ({ post, close, refresh }) => {
               <TextareaAutosize
                 className="w-full h-auto mt-5 p-4 border hover:border-blue-400 rounded-xl shadow-xl"
                 value={blogContent}
-                onChange={(e) => setBlogContent(e.target.value)}
+                onChange={e => setBlogContent(e.target.value)}
               ></TextareaAutosize>
             </div>
           </div>
