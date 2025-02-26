@@ -54,15 +54,6 @@
     "@floating-ui/utils" "^0.2.8"
     "tabbable" "^6.0.0"
 
-"@floating-ui/react@^0.27.3":
-  "integrity" "sha512-05mXdkUiVh8NCEcYKQ2C9SV9IkZ9k/dFtYmaEIN2riLv80UHoXylgBM76cgPJYfLJM3dJz7UE5MOVH0FypMd2Q=="
-  "resolved" "https://registry.npmjs.org/@floating-ui/react/-/react-0.27.4.tgz"
-  "version" "0.27.4"
-  dependencies:
-    "@floating-ui/react-dom" "^2.1.2"
-    "@floating-ui/utils" "^0.2.9"
-    "tabbable" "^6.0.0"
-
 "@floating-ui/utils@^0.2.8", "@floating-ui/utils@^0.2.9":
   "integrity" "sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg=="
   "resolved" "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.9.tgz"
@@ -554,7 +545,7 @@
   optionalDependencies:
     "fsevents" "~2.3.2"
 
-"clsx@^2.0.0", "clsx@^2.1.1":
+"clsx@^2.0.0":
   "integrity" "sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA=="
   "resolved" "https://registry.npmjs.org/clsx/-/clsx-2.1.1.tgz"
   "version" "2.1.1"
@@ -679,11 +670,6 @@
   "integrity" "sha512-qfYcmEP46iMZpADWK1NNbyRLWSR+zy9E9vgUThAl/SSbTDKG1Y3CivaCgcN1alNeyf2qhe5XVmOniFrKksGj+g=="
   "resolved" "https://registry.npmjs.org/custom-cursor-react/-/custom-cursor-react-1.0.5.tgz"
   "version" "1.0.5"
-
-"date-fns@^4.1.0":
-  "integrity" "sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg=="
-  "resolved" "https://registry.npmjs.org/date-fns/-/date-fns-4.1.0.tgz"
-  "version" "4.1.0"
 
 "debug@^3.2.7":
   "integrity" "sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ=="
@@ -2155,15 +2141,6 @@
     "http-errors" "2.0.0"
     "iconv-lite" "0.4.24"
     "unpipe" "1.0.0"
-
-"react-datepicker@^8.1.0":
-  "integrity" "sha512-11gIOrBGK1MOvl4+wxGv4YxTqXf+uoRPtKstYhb/P1cBdRdOP1sL26VE31apmDnvw8wSYfJe9AWwWbKqmM9tzw=="
-  "resolved" "https://registry.npmjs.org/react-datepicker/-/react-datepicker-8.1.0.tgz"
-  "version" "8.1.0"
-  dependencies:
-    "@floating-ui/react" "^0.27.3"
-    "clsx" "^2.1.1"
-    "date-fns" "^4.1.0"
 
 "react-dom@^18.2.0":
   "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
