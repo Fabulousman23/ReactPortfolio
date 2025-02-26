@@ -3,7 +3,6 @@ import Button from "../../components/Button";
 import DatePicker from "react-datepicker";
 import TextareaAutosize from "react-textarea-autosize";
 import { useTheme } from "next-themes";
-
 import "react-datepicker/dist/react-datepicker.css";
 
 const BlogEditor = ({ post, close, refresh }) => {
@@ -81,14 +80,9 @@ const BlogEditor = ({ post, close, refresh }) => {
             <div className="mt-5 flex flex-col items-center">
               <label className="w-full text-sx opacity-50">Date</label>
               <DatePicker
-                selected={new Date(blogVariables.date)}
+                selected={startDate}
                 className="w-full mt-2 p-4 hover:border-blue-400 rounded-md shadow-lg border-2"
-                onChange={date => {
-                  setBlogVariables({
-                    ...blogVariables,
-                    date: date.toISOString(),
-                  });
-                }}
+                onChange={date => setStartDate(date)}
               />
             </div>
             <div className="mt-5 flex flex-col items-center">
