@@ -1,22 +1,21 @@
 import React, { useState } from "react";
 import Button from "../../components/Button";
-import DatePicker from "react-datepicker";
 import TextareaAutosize from "react-textarea-autosize";
 import { useTheme } from "next-themes";
-import "react-datepicker/dist/react-datepicker.css";
 
 const BlogEditor = ({ post, close, refresh }) => {
   const { theme } = useTheme();
   const [currentTabs, setCurrentTabs] = useState("BLOGDETAILS");
-  const [blogContent, setBlogContent] = useState(post.content);
+  const [blogContent, setBlogContent] = useState("");
   const [blogVariables, setBlogVariables] = useState({
-    date: post.date,
-    title: post.title,
-    tagline: post.tagline,
-    preview: post.preview,
-    image: post.image,
+    title: "",
+    tagline: "",
+    preview: "",
+    image: "",
   });
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(
+    new Date().toISOString().split("T")[0]
+  );
 
   const savePost = async () => {
     if (process.env.NODE_ENV === "development") {
@@ -79,10 +78,11 @@ const BlogEditor = ({ post, close, refresh }) => {
           <div className="mt-10">
             <div className="mt-5 flex flex-col items-center">
               <label className="w-full text-sx opacity-50">Date</label>
-              <DatePicker
-                selected={startDate}
+              <input
+                type="date"
+                value={startDate}
                 className="w-full mt-2 p-4 hover:border-blue-400 rounded-md shadow-lg border-2"
-                onChange={date => setStartDate(date)}
+                onChange={e => setStartDate(e.target.value)}
               />
             </div>
             <div className="mt-5 flex flex-col items-center">
