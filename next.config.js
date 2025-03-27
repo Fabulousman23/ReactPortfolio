@@ -1,8 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: "export", // Enable static export
   images: {
-    domains: ["images.unsplash.com"], // Add external image domains
+    unoptimized: true, // Disable Image Optimization API for static export
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
+      },
+    ],
   },
 };
 

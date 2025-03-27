@@ -27,17 +27,16 @@ export function getRandomImageLocal() {
   return randomImageUrl[Math.floor(Math.random() * randomImageUrl.length)];
 }
 
-const ImageComponent = () => {
-  const imageUrl = getRandomImageLocal();
-
+const HeroImage = () => {
   return (
     <Image
-      src={imageUrl}
-      alt="Random image"
+      src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=3948&auto=format&fit=crop"
+      alt="Hero image"
       fill
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      priority
     />
   );
 };
 
-export default ImageComponent;
+export default HeroImage;
