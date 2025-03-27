@@ -1,7 +1,6 @@
 import React from "react";
 import Socials from "../Socials";
 import Link from "next/link";
-import Button from "../Button";
 
 const Footer = () => {
   return (
@@ -23,9 +22,11 @@ const Footer = () => {
         </div>
       </div>
       <h1 className="text-sm text-bold mt-2 laptop:mt-10 p-2 laptop:p-0">
-        {/* Made With ❤ {" "} */}
-        <Link href="/">
+        <Link href="/" legacyBehavior>
           <a className="underline underline-offset-1">Home</a>
+        </Link>
+        <Link href="/about" legacyBehavior>
+          <a>About</a>
         </Link>
       </h1>
     </>

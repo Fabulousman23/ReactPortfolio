@@ -13,10 +13,10 @@ const WorkCard = ({ img, name, description, onClick }) => {
       >
         <Image
           alt={name}
-          className="object-cover hover:scale-110 transition-all ease-out duration-300"
+          className="hover:scale-110 transition-all ease-out duration-300"
           src={img}
-          layout="fill" // Ensures the image fills the parent container
-          objectFit="cover" // Ensures the image maintains its aspect ratio
+          fill // Replaces layout="fill"
+          style={{ objectFit: "cover" }} // Replaces objectFit="cover"
         />
       </div>
       <h1 className="mt-5 text-3xl font-medium">

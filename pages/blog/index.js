@@ -62,6 +62,7 @@ const Blog = ({ posts }) => {
       alert("This thing only works in development mode.");
     }
   };
+
   return (
     showBlog.current && (
       <>
@@ -92,11 +93,11 @@ const Blog = ({ posts }) => {
                   >
                     <div className="relative w-full h-60 rounded-lg shadow-lg overflow-hidden">
                       <Image
-                        className="object-cover"
+                        className="hover:scale-110 transition-all ease-out duration-300"
                         src={post.image}
                         alt={post.title}
-                        layout="fill" // Ensures the image fills the container
-                        objectFit="cover" // Maintains aspect ratio while covering the container
+                        fill
+                        style={{ objectFit: "cover" }}
                       />
                     </div>
                     <h2 className="mt-5 text-4xl">{post.title}</h2>

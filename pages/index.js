@@ -97,7 +97,7 @@ export default function Home() {
           <h1 className="text-2xl text-bold">Work.</h1>
 
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
-            {data.projects.map((project) => (
+            {data.projects.map(project => (
               <WorkCard
                 key={project.id}
                 img={project.imageSrc}
@@ -121,11 +121,12 @@ export default function Home() {
             ))}
           </div>
         </div>
-        {/* This button should not go into production */}
         {process.env.NODE_ENV === "development" && (
           <div className="fixed bottom-5 right-5">
-            <Link href="/edit">
-              <Button type="primary">Edit Data</Button>
+            <Link href="/edit" legacyBehavior>
+              <a>
+                <Button type="primary">Edit Data</Button>
+              </a>
             </Link>
           </div>
         )}

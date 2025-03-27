@@ -1,4 +1,5 @@
 import { useLayoutEffect, useEffect } from "react";
+import Image from "next/image";
 
 export const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
@@ -16,7 +17,7 @@ export function ISOToDate(date) {
   }
 }
 
-export function getRandomImage() {
+export function getRandomImageLocal() {
   const randomImageUrl = [
     "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
     "https://images.unsplash.com/photo-1638742385167-96fc60e12f59?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
@@ -25,3 +26,18 @@ export function getRandomImage() {
   ];
   return randomImageUrl[Math.floor(Math.random() * randomImageUrl.length)];
 }
+
+const ImageComponent = () => {
+  const imageUrl = getRandomImageLocal();
+
+  return (
+    <Image
+      src={imageUrl}
+      alt="Random image"
+      fill
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+    />
+  );
+};
+
+export default ImageComponent;
