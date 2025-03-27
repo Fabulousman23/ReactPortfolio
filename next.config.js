@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  distDir: "build",
   images: {
-    domains: ["images.unsplash.com"], // Add the domain here
+    domains: ["images.unsplash.com"], // Add external image domains
   },
+  output: "export", // Enable static export
 };
 
 module.exports = nextConfig;
