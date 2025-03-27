@@ -7,9 +7,9 @@ import Socials from "../components/Socials";
 import Button from "../components/Button";
 import { useTheme } from "next-themes";
 // Data
-import { name, showResume } from "../data/portfolio.json";
-import { resume } from "../data/portfolio.json";
-import data from "../data/portfolio.json";
+import portfolio from "../data/portfolio.json";
+
+const { name, showResume, resume } = portfolio;
 
 const Resume = () => {
   const router = useRouter();
@@ -22,6 +22,7 @@ const Resume = () => {
       router.push("/");
     }
   }, []);
+
   return (
     <>
       {process.env.NODE_ENV === "development" && (
@@ -31,10 +32,10 @@ const Resume = () => {
           </Button>
         </div>
       )}
-      {data.showCursor && <Cursor />}
+      {portfolio.showCursor && <Cursor />}
       <div
         className={`container mx-auto mb-10 ${
-          data.showCursor && "cursor-none"
+          portfolio.showCursor && "cursor-none"
         }`}
       >
         <Header isBlog />
