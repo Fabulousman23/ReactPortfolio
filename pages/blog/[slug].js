@@ -11,6 +11,7 @@ import BlogEditor from "../../components/BlogEditor";
 import { useRouter } from "next/router";
 import Cursor from "../../components/Cursor";
 import data from "../../data/portfolio.json";
+import Image from "next/image";
 
 const BlogPost = ({ post }) => {
   const [showEditor, setShowEditor] = useState(false);
@@ -37,11 +38,15 @@ const BlogPost = ({ post }) => {
       >
         <Header isBlog={true} />
         <div className="mt-10 flex flex-col">
-          <img
-            className="w-full h-96 rounded-lg shadow-lg object-cover"
-            src={post.image}
-            alt={post.title}
-          ></img>
+          <div className="relative w-full h-96 rounded-lg shadow-lg overflow-hidden">
+            <Image
+              className="object-cover"
+              src={post.image}
+              alt={post.title}
+              layout="fill" // Ensures the image fills the container
+              objectFit="cover" // Maintains aspect ratio while covering the container
+            />
+          </div>
           <h1
             ref={textOne}
             className="mt-10 text-4xl mob:text-2xl laptop:text-6xl text-bold"
@@ -102,7 +107,7 @@ export async function getStaticPaths() {
   const posts = getAllPosts(["slug"]);
 
   return {
-    paths: posts.map((post) => {
+    paths: posts.map(post => {
       return {
         params: {
           slug: post.slug,

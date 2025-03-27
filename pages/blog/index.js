@@ -8,6 +8,8 @@ import Header from "../../components/Header";
 import data from "../../data/portfolio.json";
 import { ISOToDate, useIsomorphicLayoutEffect } from "../../utils";
 import { getAllPosts } from "../../utils/api";
+import Image from "next/image";
+
 const Blog = ({ posts }) => {
   const showBlog = useRef(data.showBlog);
   const text = useRef();
@@ -43,7 +45,7 @@ const Blog = ({ posts }) => {
     }
   };
 
-  const deleteBlog = (slug) => {
+  const deleteBlog = slug => {
     if (process.env.NODE_ENV === "development") {
       fetch("/api/blog", {
         method: "DELETE",
@@ -82,17 +84,21 @@ const Blog = ({ posts }) => {
             </h1>
             <div className="mt-10 grid grid-cols-1 mob:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 justify-between gap-10">
               {posts &&
-                posts.map((post) => (
+                posts.map(post => (
                   <div
                     className="cursor-pointer relative"
                     key={post.slug}
                     onClick={() => Router.push(`/blog/${post.slug}`)}
                   >
-                    <img
-                      className="w-full h-60 rounded-lg shadow-lg object-cover"
-                      src={post.image}
-                      alt={post.title}
-                    ></img>
+                    <div className="relative w-full h-60 rounded-lg shadow-lg overflow-hidden">
+                      <Image
+                        className="object-cover"
+                        src={post.image}
+                        alt={post.title}
+                        layout="fill" // Ensures the image fills the container
+                        objectFit="cover" // Maintains aspect ratio while covering the container
+                      />
+                    </div>
                     <h2 className="mt-5 text-4xl">{post.title}</h2>
                     <p className="mt-2 opacity-50 text-lg">{post.preview}</p>
                     <span className="text-sm mt-5 opacity-25">
@@ -101,7 +107,7 @@ const Blog = ({ posts }) => {
                     {process.env.NODE_ENV === "development" && mounted && (
                       <div className="absolute top-0 right-0">
                         <Button
-                          onClick={(e) => {
+                          onClick={e => {
                             deleteBlog(post.slug);
                             e.stopPropagation();
                           }}
