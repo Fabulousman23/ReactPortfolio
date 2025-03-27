@@ -50,6 +50,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                       alt={theme === "dark" ? "Moon icon" : "Sun icon"}
                       width={24}
                       height={24}
+                      unoptimized={true} // Disable image optimization
                     />
                   </Button>
                 )}
@@ -77,6 +78,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                     }
                     width={20}
                     height={20}
+                    unoptimized={true} // Disable image optimization
                   />
                 </Popover.Button>
               </div>
@@ -183,6 +185,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                   alt={theme === "dark" ? "Moon icon" : "Sun icon"}
                   width={24}
                   height={24}
+                  unoptimized={true} // Disable image optimization
                 />
               </Button>
             )}
@@ -218,6 +221,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                   alt={theme === "dark" ? "Moon icon" : "Sun icon"}
                   width={24}
                   height={24}
+                  unoptimized={true} // Disable image optimization
                 />
               </Button>
             )}
