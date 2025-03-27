@@ -4,7 +4,6 @@ const nextConfig = {
   images: {
     domains: ["images.unsplash.com"], // Add external image domains
   },
-  output: "export", // Enable static export
 };
 
 module.exports = nextConfig;
