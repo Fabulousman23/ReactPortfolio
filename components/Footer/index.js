@@ -25,9 +25,6 @@ const Footer = () => {
         <Link href="/" legacyBehavior>
           <a className="underline underline-offset-1">Home</a>
         </Link>
-        <Link href="/about" legacyBehavior>
-          <a>About</a>
-        </Link>
       </h1>
     </>
   );
