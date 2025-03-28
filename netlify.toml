@@ -2,6 +2,7 @@
 [build]
   command = "npm run build"
   publish = "out"
+  node_version = "16"
 
   functions = "netlify/functions"
 

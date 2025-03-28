@@ -53,9 +53,8 @@ const Edit = () => {
     });
   };
 
-  const deleteProject = (id) => {
-    const copyProjects = data.projects;
-    copyProjects = copyProjects.filter((project) => project.id !== id);
+  const deleteProject = id => {
+    const copyProjects = data.projects.filter(project => project.id !== id); // Avoid reassignment
     setData({ ...data, projects: copyProjects });
   };
 
@@ -82,9 +81,8 @@ const Edit = () => {
     });
   };
 
-  const deleteService = (id) => {
-    const copyServices = data.services;
-    copyServices = copyServices.filter((service) => service.id !== id);
+  const deleteService = id => {
+    const copyServices = data.services.filter(service => service.id !== id); // Avoid reassignment
     setData({ ...data, services: copyServices });
   };
 
@@ -110,9 +108,8 @@ const Edit = () => {
     });
   };
 
-  const deleteSocials = (id) => {
-    const copySocials = data.socials;
-    copySocials = copySocials.filter((social) => social.id !== id);
+  const deleteSocials = id => {
+    const copySocials = data.socials.filter(social => social.id !== id); // Avoid reassignment
     setData({ ...data, socials: copySocials });
   };
 
@@ -207,7 +204,7 @@ const Edit = () => {
               <label className="w-1/5 text-lg opacity-50">Name</label>
               <input
                 value={data.name}
-                onChange={(e) => setData({ ...data, name: e.target.value })}
+                onChange={e => setData({ ...data, name: e.target.value })}
                 className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
                 type="text"
               ></input>
@@ -218,7 +215,7 @@ const Edit = () => {
               </label>
               <input
                 value={data.headerTaglineOne}
-                onChange={(e) =>
+                onChange={e =>
                   setData({ ...data, headerTaglineOne: e.target.value })
                 }
                 className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
@@ -231,7 +228,7 @@ const Edit = () => {
               </label>
               <input
                 value={data.headerTaglineTwo}
-                onChange={(e) =>
+                onChange={e =>
                   setData({ ...data, headerTaglineTwo: e.target.value })
                 }
                 className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
@@ -244,7 +241,7 @@ const Edit = () => {
               </label>
               <input
                 value={data.headerTaglineThree}
-                onChange={(e) =>
+                onChange={e =>
                   setData({ ...data, headerTaglineThree: e.target.value })
                 }
                 className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
@@ -257,7 +254,7 @@ const Edit = () => {
               </label>
               <input
                 value={data.headerTaglineFour}
-                onChange={(e) =>
+                onChange={e =>
                   setData({ ...data, headerTaglineFour: e.target.value })
                 }
                 className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
@@ -362,7 +359,7 @@ const Edit = () => {
                     <label className="w-1/5 text-lg opacity-50">Title</label>
                     <input
                       value={project.title}
-                      onChange={(e) =>
+                      onChange={e =>
                         editProjects(index, {
                           ...project,
                           title: e.target.value,
@@ -378,7 +375,7 @@ const Edit = () => {
                     </label>
                     <input
                       value={project.description}
-                      onChange={(e) =>
+                      onChange={e =>
                         editProjects(index, {
                           ...project,
                           description: e.target.value,
@@ -394,7 +391,7 @@ const Edit = () => {
                     </label>
                     <input
                       value={project.imageSrc}
-                      onChange={(e) =>
+                      onChange={e =>
                         editProjects(index, {
                           ...project,
                           imageSrc: e.target.value,
@@ -408,7 +405,7 @@ const Edit = () => {
                     <label className="w-1/5 text-lg opacity-50">url</label>
                     <input
                       value={project.url}
-                      onChange={(e) =>
+                      onChange={e =>
                         editProjects(index, {
                           ...project,
                           url: e.target.value,
@@ -449,7 +446,7 @@ const Edit = () => {
                     <label className="w-1/5 text-lg opacity-50">Title</label>
                     <input
                       value={service.title}
-                      onChange={(e) =>
+                      onChange={e =>
                         editServices(index, {
                           ...service,
                           title: e.target.value,
@@ -465,7 +462,7 @@ const Edit = () => {
                     </label>
                     <textarea
                       value={service.description}
-                      onChange={(e) =>
+                      onChange={e =>
                         editServices(index, {
                           ...service,
                           description: e.target.value,
@@ -491,7 +488,7 @@ const Edit = () => {
             <textarea
               className="w-full h-96 mt-10 p-2 rounded-md shadow-md border"
               value={data.aboutpara}
-              onChange={(e) => setData({ ...data, aboutpara: e.target.value })}
+              onChange={e => setData({ ...data, aboutpara: e.target.value })}
             ></textarea>
           </div>
         )}
@@ -513,7 +510,7 @@ const Edit = () => {
                     <label className="w-1/5 text-lg opacity-50">Title</label>
                     <input
                       value={social.title}
-                      onChange={(e) =>
+                      onChange={e =>
                         editSocials(index, {
                           ...social,
                           title: e.target.value,
@@ -527,7 +524,7 @@ const Edit = () => {
                     <label className="w-1/5 text-lg opacity-50">Link</label>
                     <input
                       value={social.link}
-                      onChange={(e) =>
+                      onChange={e =>
                         editSocials(index, {
                           ...social,
                           link: e.target.value,
@@ -555,7 +552,7 @@ const Edit = () => {
               <label className="w-1/5 text-sx opacity-50">Tagline</label>
               <input
                 value={data.resume.tagline}
-                onChange={(e) =>
+                onChange={e =>
                   setData({
                     ...data,
                     resume: { ...data.resume, tagline: e.target.value },
@@ -569,7 +566,7 @@ const Edit = () => {
               <label className="w-1/5 text-lg opacity-50">Description</label>
               <textarea
                 value={data.resume.description}
-                onChange={(e) =>
+                onChange={e =>
                   setData({
                     ...data,
                     resume: { ...data.resume, description: e.target.value },
@@ -598,7 +595,7 @@ const Edit = () => {
                     <label className="w-1/5 text-lg opacity-50">Dates</label>
                     <input
                       value={experiences.dates}
-                      onChange={(e) =>
+                      onChange={e =>
                         handleEditExperiences(index, {
                           ...experiences,
                           dates: e.target.value,
@@ -612,7 +609,7 @@ const Edit = () => {
                     <label className="w-1/5 text-lg opacity-50">Type</label>
                     <input
                       value={experiences.type}
-                      onChange={(e) =>
+                      onChange={e =>
                         handleEditExperiences(index, {
                           ...experiences,
                           type: e.target.value,
@@ -626,7 +623,7 @@ const Edit = () => {
                     <label className="w-1/5 text-lg opacity-50">Position</label>
                     <input
                       value={experiences.position}
-                      onChange={(e) =>
+                      onChange={e =>
                         handleEditExperiences(index, {
                           ...experiences,
                           position: e.target.value,
@@ -641,7 +638,7 @@ const Edit = () => {
                     <div className="w-4/5 ml-10 flex flex-col">
                       <input
                         value={experiences.bullets}
-                        onChange={(e) =>
+                        onChange={e =>
                           handleEditExperiences(index, {
                             ...experiences,
                             bullets: e.target.value,
@@ -668,7 +665,7 @@ const Edit = () => {
                 <label className="w-1/5 text-lg opacity-50">Name</label>
                 <input
                   value={data.resume.education.universityName}
-                  onChange={(e) =>
+                  onChange={e =>
                     setData({
                       ...data,
                       resume: {
@@ -688,7 +685,7 @@ const Edit = () => {
                 <label className="w-1/5 text-lg opacity-50">Dates</label>
                 <input
                   value={data.resume.education.universityDate}
-                  onChange={(e) =>
+                  onChange={e =>
                     setData({
                       ...data,
                       resume: {
@@ -708,7 +705,7 @@ const Edit = () => {
                 <label className="w-1/5 text-lg opacity-50">Detail</label>
                 <input
                   value={data.resume.education.universityPara}
-                  onChange={(e) =>
+                  onChange={e =>
                     setData({
                       ...data,
                       resume: {
@@ -734,7 +731,7 @@ const Edit = () => {
                     <div key={index} className="flex">
                       <input
                         value={language}
-                        onChange={(e) => {
+                        onChange={e => {
                           setData({
                             ...data,
                             resume: {
@@ -792,7 +789,7 @@ const Edit = () => {
                     <div key={index} className="flex">
                       <input
                         value={framework}
-                        onChange={(e) => {
+                        onChange={e => {
                           setData({
                             ...data,
                             resume: {
@@ -850,7 +847,7 @@ const Edit = () => {
                     <div key={index} className="flex">
                       <input
                         value={other}
-                        onChange={(e) => {
+                        onChange={e => {
                           setData({
                             ...data,
                             resume: {
