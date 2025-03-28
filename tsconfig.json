@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5", // Specify ECMAScript target version
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ], // Include libraries
+    "lib": ["dom", "dom.iterable", "esnext"], // Include libraries
     "allowJs": true, // Allow JavaScript files
     "skipLibCheck": true, // Skip type checking of declaration files
     "strict": true, // Enable strict type checking
@@ -19,10 +15,6 @@
     "jsx": "preserve", // Use "react" for JSX
     "incremental": true
   },
-  "include": [
-    "src/**/*"
-  ], // Include all subdirectories in src
-  "exclude": [
-    "node_modules"
-  ] // Exclude node_modules
+  "include": ["src/**/*"], // Include all subdirectories and files in src
+  "exclude": ["node_modules"] // Exclude node_modules
 }
