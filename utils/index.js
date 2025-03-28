@@ -30,11 +30,11 @@ export function getRandomImageLocal() {
 const HeroImage = () => {
   return (
     <Image
-      src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=3948&auto=format&fit=crop"
-      alt="Hero image"
-      fill
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-      priority
+      src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=3948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="Descriptive Alt Text"
+      width={3948} // Replace with the actual width of the image
+      height={2560} // Replace with the actual height of the image
+      priority // Add this property to optimize LCP
     />
   );
 };
