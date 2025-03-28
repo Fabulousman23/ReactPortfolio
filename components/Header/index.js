@@ -96,15 +96,10 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                     <Button onClick={() => router.push("/blog")}>Blog</Button>
                   )}
                   {showResume && (
-                    <Button
-                      onClick={() =>
-                        window.open("mailto:andrew.makiev@gmail.com")
-                      }
-                    >
+                    <Button onClick={() => router.push("/resume")}>
                       Resume
                     </Button>
                   )}
-
                   <Button
                     onClick={() =>
                       window.open("mailto:andrew.makiev@gmail.com")
@@ -129,7 +124,6 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                       Resume
                     </Button>
                   )}
-
                   <Button
                     onClick={() =>
                       window.open("mailto:andrew.makiev@gmail.com")
